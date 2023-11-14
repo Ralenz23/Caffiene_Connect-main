@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:caffeine_connectfull/home_page.dart';
+import 'package:caffeine_connectfull/Authentication/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -15,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(const Duration(seconds: 3), ()=>Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const Home())));
+    Timer(const Duration(seconds: 3), ()=>Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const LoginScreen())));
   }
 
   @override
