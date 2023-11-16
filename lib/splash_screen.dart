@@ -15,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(Duration(seconds: 3), ()=>Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginScreen())));
+    Timer(const Duration(seconds: 3), ()=>Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const LoginScreen())));
   }
 
   @override
@@ -38,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 ),
               ],
             ),
-            CircularProgressIndicator(),
+            const CircularProgressIndicator(),
           ],
         ),
       ),

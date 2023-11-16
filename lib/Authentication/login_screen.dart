@@ -1,4 +1,5 @@
 import 'package:caffeine_connectfull/Authentication/registration_screen.dart';
+import 'package:caffeine_connectfull/landing_page.dart';
 import 'package:flutter/material.dart';
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -65,7 +66,9 @@ class _LoginScreenState extends State<LoginScreen> {
       child: MaterialButton(
         padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>LandingPage()));
+        },
         child: Text("Login", textAlign: TextAlign.center,
         style: TextStyle(fontSize: 20,
         color: Colors.white,
