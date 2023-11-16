@@ -1,6 +1,6 @@
 import 'package:caffeine_connectfull/Authentication/registration_screen.dart';
+import 'package:caffeine_connectfull/landing_page.dart';
 import 'package:flutter/material.dart';
-
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -12,8 +12,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   final _formKey = GlobalKey<FormState>();
 
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController emailController = new TextEditingController();
+  final TextEditingController passwordController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +29,8 @@ class _LoginScreenState extends State<LoginScreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-        prefixIcon: const Icon(Icons.mail),
-        contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+        prefixIcon: Icon(Icons.mail),
+        contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
         hintText: "Email",
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
@@ -49,8 +49,8 @@ class _LoginScreenState extends State<LoginScreen> {
       },
       textInputAction: TextInputAction.done,
       decoration: InputDecoration(
-        prefixIcon: const Icon(Icons.vpn_key),
-        contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+        prefixIcon: Icon(Icons.vpn_key),
+        contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
         hintText: "Password",
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
@@ -62,12 +62,14 @@ class _LoginScreenState extends State<LoginScreen> {
     final loginButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(30),
-      color: const Color.fromARGB(255, 0, 0, 0),
+      color: Colors.redAccent,
       child: MaterialButton(
-        padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+        padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
-        onPressed: () {},
-        child: const Text("Login", textAlign: TextAlign.center,
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>LandingPage()));
+        },
+        child: Text("Login", textAlign: TextAlign.center,
         style: TextStyle(fontSize: 20,
         color: Colors.white,
         fontWeight: FontWeight.bold)),
@@ -88,30 +90,31 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
+
                     SizedBox(
                       height: 150,
                       child: Padding(
-                        padding: const EdgeInsets.only(bottom: 0),
+                        padding: EdgeInsets.only(bottom: 0),
                         child: Image.asset("assets/images/blacksymbol.png",
                       fit: BoxFit.contain,)
                     ),
                   ),
-                  const SizedBox(height: 45),
+                  SizedBox(height: 45),
                     emailField,
-                    const SizedBox(height: 25),
+                    SizedBox(height: 25),
                     passwordField,
-                    const SizedBox(height: 35),
+                    SizedBox(height: 35),
                     loginButton,
-                    const SizedBox(height: 15),
+                    SizedBox(height: 15),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        const Text("Don't have an account? "),
+                        Text("Don't have an account? "),
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>const RegistrationScreen()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>RegistrationScreen()));
                           },
-                          child: const Text("Sign Up", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Colors.redAccent),
+                          child: Text("SignUp", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Colors.redAccent),
                           ),
                         )
                       ],
