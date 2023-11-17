@@ -67,6 +67,14 @@ flutter:
   assets:
     - assets/images/logoname.png
     - assets/images/blacksymbol.png
+    - assets/images/carousel/carousel-placeholder-0.jpg
+    - assets/images/carousel/carousel-placeholder-1.jpg
+    - assets/images/carousel/carousel-placeholder-2.jpg
+    - assets/images/carousel/carousel-placeholder-3.jpg
+    - assets/images/carousel/carousel-placeholder-4.jpg
+    - assets/images/menu/menu-kopilisim-1.png
+    - assets/images/menu/menu-kopilisim-2.jpg
+    - assets/images/menu/menu-kopilisim-3.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
