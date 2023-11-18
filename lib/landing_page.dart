@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:caffeine_connectfull/cafe_selection.dart';
 import 'package:flutter/material.dart';
 
 
@@ -72,9 +73,9 @@ class _LandingPageState extends State<LandingPage> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.red),
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
-            Navigator.of(context).pop();
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>CafeSelectionPage()));
           },
         ),
       ),
