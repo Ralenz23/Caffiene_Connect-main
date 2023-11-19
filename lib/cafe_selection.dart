@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:caffeine_connectfull/landing_page.dart';
+import 'package:flutter/material.dart';
+
 
 class CafeSelectionPage extends StatelessWidget {
   const CafeSelectionPage({Key? key}) : super(key: key);

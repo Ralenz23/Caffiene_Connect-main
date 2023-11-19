@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:caffeine_connectfull/cafe_selection.dart';
+import 'package:caffeine_connectfull/menu_categories/menu_list_coffee.dart';
+
 import 'package:flutter/material.dart';
 
 
@@ -30,7 +32,7 @@ class _LandingPageState extends State<LandingPage> {
     ),
     BottomNavigationBarItem(
       icon: Icon(Icons.shopping_cart),
-      label: 'Search',
+      label: 'Cart',
     ),
     BottomNavigationBarItem(
       icon: Icon(Icons.account_circle),
@@ -277,17 +279,34 @@ class _LandingPageState extends State<LandingPage> {
                         // Example: Image.asset('assets/images/image1.jpg'),
                         Padding(
                           padding: const EdgeInsets.fromLTRB(28, 0, 4, 6),
-                          child: Image.asset('assets/images/menu/menu-kopilisim-1.png'),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(4, 0, 4, 6),
+                          child: GestureDetector(
+                          onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => CoffeeMenuPage()),
+                              );
+                            },
+                        child: Image.asset('assets/images/menu/menu-kopilisim-1.png'),
+                      ),
+                    ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(4, 0, 4, 6),
+                        child: GestureDetector(
+                          onTap: () {
+                            // Add your action here when the second image is tapped
+                          },
                           child: Image.asset('assets/images/menu/menu-kopilisim-2.jpg'),
                         ),
+                      ),
                         Padding(
                           padding: const EdgeInsets.fromLTRB(4, 0, 28, 6),
-                          child: Image.asset('assets/images/menu/menu-kopilisim-3.jpg'),
-                        ),
-                        // ...
+                          child: GestureDetector(
+                            onTap: () {
+                              // Add your action here when the third image is tapped
+                            },
+                            child: Image.asset('assets/images/menu/menu-kopilisim-3.jpg'),
+                          ),
+                        )
                       ],
                     ),
                   ),

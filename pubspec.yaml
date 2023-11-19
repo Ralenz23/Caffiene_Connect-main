@@ -77,6 +77,9 @@ flutter:
     - assets/images/menu/menu-kopilisim-3.jpg
     - assets/images/cafe-selection/cafe-selection-logo-kopilism.jpg
     - assets/images/cafe-selection/cafe-selection-logo-diplo.jpg
+    - assets/images/menu/order-menu/order-menu-1.jpg
+    - assets/images/menu/order-menu/order-menu-2.jpg
+    - assets/images/menu/order-menu/order-menu-3.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
