@@ -2,10 +2,12 @@ import 'package:caffeine_connectfull/landing_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: CoffeeMenuPage(),
+      home: const CoffeeMenuPage(),
     );
   }
 }
@@ -31,7 +33,7 @@ class _CoffeeMenuPageState extends State<CoffeeMenuPage> {
 
 //BottomNavigationBar
   final List<Widget> _pages = [
-    LandingPage(), // For home widget (BottomNavigationBar)
+    const LandingPage(), // For home widget (BottomNavigationBar)
     
   ];
 
@@ -39,29 +41,29 @@ class _CoffeeMenuPageState extends State<CoffeeMenuPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Coffee Menu'),
+        title: const Text('Coffee Menu'),
       ),
       body: ListView(
-        padding: EdgeInsets.all(16.0),
-        children: [
+        padding: const EdgeInsets.all(16.0),
+        children: const [
           CoffeeMenuItem(
       name: 'Latte',
       description: 'Strong and flavorful coffee',
-      price: '\₱160',
+      price: '₱160',
       imagePath: 'assets/images/menu/order-menu/order-menu-1.jpg',
     ),
     SizedBox(height: 16.0),
     CoffeeMenuItem(
       name: 'Cappuccino',
       description: 'Espresso with frothed milk',
-      price: '\₱170',
+      price: '₱170',
       imagePath: 'assets/images/menu/order-menu/order-menu-2.jpg',
     ),
     SizedBox(height: 16.0),
     CoffeeMenuItem(
       name: 'Espresso',
       description: 'Espresso with steamed milk',
-      price: '\₱110',
+      price: '₱110',
       imagePath: 'assets/images/menu/order-menu/order-menu-3.jpg',
     ),
   ],
@@ -81,7 +83,7 @@ class _CoffeeMenuPageState extends State<CoffeeMenuPage> {
             MaterialPageRoute(builder: (context) => _pages[index]),
           );
         },
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
@@ -111,7 +113,7 @@ class CoffeeMenuItem extends StatelessWidget {
   final String price;
   final String imagePath;
 
-  const CoffeeMenuItem({
+  const CoffeeMenuItem({super.key, 
     required this.name,
     required this.description,
     required this.price,
@@ -127,7 +129,7 @@ class CoffeeMenuItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: Padding(
-        padding: EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -143,15 +145,15 @@ class CoffeeMenuItem extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 12.0),
+            const SizedBox(height: 12.0),
             Text(
               name,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 8.0),
+            const SizedBox(height: 8.0),
             Text(
               description,
               style: TextStyle(
@@ -159,13 +161,13 @@ class CoffeeMenuItem extends StatelessWidget {
                 color: Colors.grey[600],
               ),
             ),
-            SizedBox(height: 8.0),
+            const SizedBox(height: 8.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   price,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18.0,
                     fontWeight: FontWeight.bold,
                   ),
@@ -185,12 +187,12 @@ class CoffeeMenuItem extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.black,
+                    backgroundColor: Colors.black,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
-                  child: Text(
+                  child: const Text(
                     'View',
                     style: TextStyle(
                       fontSize: 16.0,
@@ -214,7 +216,7 @@ class CoffeeDetailPage extends StatefulWidget {
   final String price;
   final String imagePath;
 
-  const CoffeeDetailPage({
+  const CoffeeDetailPage({super.key, 
     required this.name,
     required this.description,
     required this.price,
@@ -231,7 +233,7 @@ class _CoffeeDetailPageState extends State<CoffeeDetailPage> {
   bool _isChecked2 = false;
 
   final List<Widget> _pages = [
-    LandingPage(), // Home page
+    const LandingPage(), // Home page
     
   ];
 
@@ -249,7 +251,7 @@ class _CoffeeDetailPageState extends State<CoffeeDetailPage> {
                 BoxShadow(
                   color: Colors.black.withOpacity(0.2),
                   blurRadius: 8,
-                  offset: Offset(0, 3),
+                  offset: const Offset(0, 3),
                 ),
               ],
             ),
@@ -263,20 +265,20 @@ class _CoffeeDetailPageState extends State<CoffeeDetailPage> {
               ),
             ),
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   widget.name,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 24.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 8.0),
+                const SizedBox(height: 8.0),
                 Text(
                   widget.description,
                   style: TextStyle(
@@ -285,10 +287,10 @@ class _CoffeeDetailPageState extends State<CoffeeDetailPage> {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 4.0), 
+                const SizedBox(height: 4.0), 
                 CheckboxListTile(
-                  contentPadding: EdgeInsets.fromLTRB(0, 8, 0, 0),
-                  title: Text('Whipped Cream'),
+                  contentPadding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
+                  title: const Text('Whipped Cream'),
                   value: _isChecked1,
                   onChanged: (bool? value) {
                     setState(() {
@@ -296,10 +298,10 @@ class _CoffeeDetailPageState extends State<CoffeeDetailPage> {
                     });
                   },
                 ),
-                SizedBox(height: 0.0), 
+                const SizedBox(height: 0.0), 
                 CheckboxListTile(
                   contentPadding: EdgeInsets.zero,
-                  title: Text('Extra Milk'),
+                  title: const Text('Extra Milk'),
                   value: _isChecked2,
                   onChanged: (bool? value) {
                     setState(() {
@@ -307,27 +309,27 @@ class _CoffeeDetailPageState extends State<CoffeeDetailPage> {
                     });
                   },
                 ),
-                SizedBox(height: 8.0),
+                const SizedBox(height: 8.0),
                 Text(
                   widget.price,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 8.0),
+                const SizedBox(height: 8.0),
                 ElevatedButton(
                   onPressed: () {
                     // Add 'Add to Cart' logic here
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.black,
+                    backgroundColor: Colors.black,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  child: const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: Text(
                       'Add to Cart',
                       style: TextStyle(
@@ -357,7 +359,7 @@ class _CoffeeDetailPageState extends State<CoffeeDetailPage> {
             MaterialPageRoute(builder: (context) => _pages[index]),
           );
         },
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
