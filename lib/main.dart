@@ -1,8 +1,10 @@
+import 'package:caffeine_connectfull/Builder/color_schemes.g.dart';
 import 'package:caffeine_connectfull/firebase_options.dart';
 import 'package:caffeine_connectfull/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -25,10 +27,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Caffeine Connect App',
       theme: ThemeData(
-        
-      
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
         useMaterial3: true,
+        colorScheme: lightColorScheme,
+      ),
+      darkTheme: ThemeData(
+        useMaterial3: true,
+        colorScheme: darkColorScheme,
       ),
       home: const SplashScreen(),
     );
