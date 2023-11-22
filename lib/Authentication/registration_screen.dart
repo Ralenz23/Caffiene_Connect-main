@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:sign_in_button/sign_in_button.dart';
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({super.key});
@@ -140,6 +142,38 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         ),
     );
 
+    //Google auth
+    final FirebaseAuth _auth = FirebaseAuth.instance;
+
+    User? _user;
+
+    void _handleGoogleSignIn(){
+      try {
+        GoogleAuthProvider _googleAuthProvider = GoogleAuthProvider();
+        _auth.signInWithProvider(_googleAuthProvider);
+      } catch (error) {
+        print(error);
+      }
+    }
+
+    @override
+    initState(){
+      super.initState();
+      _auth.authStateChanges().listen((event) {
+        setState(() {
+          _user = event;
+        });
+      });
+    }
+
+    final googleAuth = SignInButton (
+      Buttons.google,
+      text: "Google Sign In",
+      onPressed: () {
+        _handleGoogleSignIn();
+      },
+    );
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -190,6 +224,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
                     const SizedBox(height: 15),
                     signUpButton,
+
+                    const SizedBox(height: 15),
+                    googleAuth,
 
                   ],  
                 ),
