@@ -143,11 +143,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        // Replace leading property with back button functionality
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.red),
           onPressed: () {
-            Navigator.of(context).pop(); // Navigate back on back arrow press
+            Navigator.of(context).pop(); 
           },
     ),
   ),
