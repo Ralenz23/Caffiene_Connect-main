@@ -22,26 +22,26 @@ class _LandingPageState extends State<LandingPage> {
   int itemCount = 10000; // Set a large number for infinite looping
 
   //Bottom Navigation Bar Items
-  List<BottomNavigationBarItem> _navBarItems = [
-    BottomNavigationBarItem(
+  final List<BottomNavigationBarItem> _navBarItems = [
+    const BottomNavigationBarItem(
       icon: Icon(Icons.home),
       label: 'Home',
     ),
-    BottomNavigationBarItem(
+    const BottomNavigationBarItem(
       icon: Icon(Icons.map),
       label: 'Map',
     ),
-    BottomNavigationBarItem(
+    const BottomNavigationBarItem(
       icon: Icon(Icons.shopping_cart),
       label: 'Cart',
     ),
-    BottomNavigationBarItem(
+    const BottomNavigationBarItem(
       icon: Icon(Icons.account_circle),
       label: 'Profile',
     ),
   ];
 
-  BottomNavigationBarType _bottomNavType = BottomNavigationBarType.fixed;
+  final BottomNavigationBarType _bottomNavType = BottomNavigationBarType.fixed;
   int _selectedIndex = 0; // Added _selectedIndex variable
 
   Timer? carouselTimer;
@@ -78,7 +78,7 @@ class _LandingPageState extends State<LandingPage> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>CafeSelectionPage()));
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>const CafeSelectionPage()));
           },
         ),
       ),
@@ -136,7 +136,7 @@ class _LandingPageState extends State<LandingPage> {
                                         color: Colors.black.withOpacity(0.3),
                                         spreadRadius: 2,
                                         blurRadius: 5,
-                                        offset: Offset(0, 3),
+                                        offset: const Offset(0, 3),
                                       ),
                                     ],
                                   ),
@@ -174,7 +174,7 @@ class _LandingPageState extends State<LandingPage> {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Brief description",
                                       style: TextStyle(
                                       color: Colors.black,
@@ -182,7 +182,7 @@ class _LandingPageState extends State<LandingPage> {
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  SizedBox(height: 8),
+                                  const SizedBox(height: 8),
                                   Text(
                                     "Indulge in the perfect balance of creamy and fruity, blended \nto icy perfection. Satisfy your cravings and embrace the \nsweetness in every sip!",
                                     style: TextStyle(
@@ -190,8 +190,8 @@ class _LandingPageState extends State<LandingPage> {
                                       fontSize: 14,
                                     ),
                                   ),
-                                  SizedBox(height: 8),
-                                  Text(
+                                  const SizedBox(height: 8),
+                                  const Text(
                                       "Signature Brews",
                                       style: TextStyle(
                                       color: Colors.black,
@@ -265,12 +265,12 @@ class _LandingPageState extends State<LandingPage> {
                   child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
+                child: SizedBox(
                   height: 160, // Set your desired height
                   child: Center(
                     child: ListView(
@@ -284,7 +284,7 @@ class _LandingPageState extends State<LandingPage> {
                           onTap: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => CoffeeMenuPage()),
+                                MaterialPageRoute(builder: (context) => const CoffeeMenuPage()),
                               );
                             },
                         child: Image.asset('assets/images/menu/menu-kopilisim-1.png'),
@@ -320,12 +320,12 @@ class _LandingPageState extends State<LandingPage> {
           ),
           
           //top greeting text
-          Positioned(
+          const Positioned(
             top: 0,
             left: 0,
             right: 0,
             child: Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: EdgeInsets.all(20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

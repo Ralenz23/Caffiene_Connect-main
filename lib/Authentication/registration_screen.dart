@@ -147,7 +147,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
     User? user;
 
-    void handleGoogleSignIn(){
+    void _handleGoogleSignIn(){
       try {
         GoogleAuthProvider googleAuthProvider = GoogleAuthProvider();
         auth.signInWithProvider(googleAuthProvider);
@@ -170,7 +170,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       Buttons.google,
       text: "Google Sign In",
       onPressed: () {
-        handleGoogleSignIn();
+        _handleGoogleSignIn();
       },
     );
 

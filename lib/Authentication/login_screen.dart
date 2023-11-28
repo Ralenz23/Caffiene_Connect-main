@@ -12,8 +12,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   final _formKey = GlobalKey<FormState>();
 
-  final TextEditingController emailController = new TextEditingController();
-  final TextEditingController passwordController = new TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +29,8 @@ class _LoginScreenState extends State<LoginScreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-        prefixIcon: Icon(Icons.mail),
-        contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+        prefixIcon: const Icon(Icons.mail),
+        contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         hintText: "Email",
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
@@ -49,8 +49,8 @@ class _LoginScreenState extends State<LoginScreen> {
       },
       textInputAction: TextInputAction.done,
       decoration: InputDecoration(
-        prefixIcon: Icon(Icons.vpn_key),
-        contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+        prefixIcon: const Icon(Icons.vpn_key),
+        contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         hintText: "Password",
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
@@ -64,12 +64,12 @@ class _LoginScreenState extends State<LoginScreen> {
       borderRadius: BorderRadius.circular(30),
       color: Colors.black,
       child: MaterialButton(
-        padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+        padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context)=>CafeSelectionPage()));
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>const CafeSelectionPage()));
         },
-        child: Text("Login", textAlign: TextAlign.center,
+        child: const Text("Login", textAlign: TextAlign.center,
         style: TextStyle(fontSize: 20,
         color: Colors.white,
         fontWeight: FontWeight.bold)),
@@ -94,27 +94,27 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                       height: 150,
                       child: Padding(
-                        padding: EdgeInsets.only(bottom: 0),
+                        padding: const EdgeInsets.only(bottom: 0),
                         child: Image.asset("assets/images/blacksymbol.png",
                       fit: BoxFit.contain,)
                     ),
                   ),
-                  SizedBox(height: 45),
+                  const SizedBox(height: 45),
                     emailField,
-                    SizedBox(height: 25),
+                    const SizedBox(height: 25),
                     passwordField,
-                    SizedBox(height: 35),
+                    const SizedBox(height: 35),
                     loginButton,
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text("Don't have an account? "),
+                        const Text("Don't have an account? "),
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>RegistrationScreen()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>const RegistrationScreen()));
                           },
-                          child: Text("SignUp", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Colors.redAccent),
+                          child: const Text("SignUp", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Colors.redAccent),
                           ),
                         )
                       ],

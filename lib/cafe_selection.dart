@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 
 
 class CafeSelectionPage extends StatelessWidget {
-  const CafeSelectionPage({Key? key}) : super(key: key);
+  const CafeSelectionPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final List<String> _titles = [
+    final List<String> titles = [
       'Kopilism',
       'Diplo Fleur Cafe',
       'Title: Menu 2',
       'Title: Menu 3',
     ];
 
-    final List<String> _descriptions = [
+    final List<String> descriptions = [
       'Indulge in the perfect balance of creamy and fruity, blended to icy perfection. Satisfy your cravings and embrace the sweetness in every sip!',
       'A cozy spot offering freshly brewed coffees, artisanal teas, and delightful pastries. Known for its inviting ambiance, it\'s the perfect place to relax and enjoy light bites in a serene setting.',
       'Description for Menu 2',
@@ -37,8 +37,8 @@ class CafeSelectionPage extends StatelessWidget {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => SecondPage(
                       heroTag: index,
-                      title: _titles[index],
-                      description: _descriptions[index],
+                      title: titles[index],
+                      description: descriptions[index],
                     ),
                   ));
                 },
@@ -59,8 +59,8 @@ class CafeSelectionPage extends StatelessWidget {
                       const SizedBox(width: 10),
                       Expanded(
                         child: Text(
-                          _titles[index],
-                          style: Theme.of(context).textTheme.headline6,
+                          titles[index],
+                          style: Theme.of(context).textTheme.titleLarge,
                         ),
                       ),
                     ],
@@ -81,11 +81,11 @@ class SecondPage extends StatelessWidget {
   final String description;
 
   const SecondPage({
-    Key? key,
+    super.key,
     required this.heroTag,
     required this.title,
     required this.description,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -124,7 +124,7 @@ class SecondPage extends StatelessWidget {
                 children: [
                   Text(
                     description,
-                    style: Theme.of(context).textTheme.headline5,
+                    style: Theme.of(context).textTheme.headlineSmall,
                     textAlign: TextAlign.center,
                   ),
                   Padding(
@@ -135,14 +135,14 @@ class SecondPage extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => LandingPage()),
+                            MaterialPageRoute(builder: (context) => const LandingPage()),
                           );
                         },
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.black,
+                          backgroundColor: Colors.black,
                           padding: const EdgeInsets.all(16.0),
                         ),
-                        child: Text(
+                        child: const Text(
                           'Let\'s Go!',
                           style: TextStyle(
                             fontSize: 20,
