@@ -143,14 +143,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     );
 
     //Google auth
-    final FirebaseAuth _auth = FirebaseAuth.instance;
+    final FirebaseAuth auth = FirebaseAuth.instance;
 
-    User? _user;
+    User? user;
 
     void _handleGoogleSignIn(){
       try {
-        GoogleAuthProvider _googleAuthProvider = GoogleAuthProvider();
-        _auth.signInWithProvider(_googleAuthProvider);
+        GoogleAuthProvider googleAuthProvider = GoogleAuthProvider();
+        auth.signInWithProvider(googleAuthProvider);
       } catch (error) {
         print(error);
       }
@@ -159,9 +159,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     @override
     initState(){
       super.initState();
-      _auth.authStateChanges().listen((event) {
+      auth.authStateChanges().listen((event) {
         setState(() {
-          _user = event;
+          user = event;
         });
       });
     }

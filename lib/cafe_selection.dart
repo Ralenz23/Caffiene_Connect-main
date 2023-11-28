@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 
 class CafeSelectionPage extends StatelessWidget {
-  const CafeSelectionPage({Key? key}) : super(key: key);
+  const CafeSelectionPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -81,11 +81,11 @@ class SecondPage extends StatelessWidget {
   final String description;
 
   const SecondPage({
-    Key? key,
+    super.key,
     required this.heroTag,
     required this.title,
     required this.description,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

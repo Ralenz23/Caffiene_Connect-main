@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
 }
 
 class CoffeeMenuPage extends StatefulWidget {
-  const CoffeeMenuPage({Key? key}) : super(key: key);
+  const CoffeeMenuPage({super.key});
 
   @override
   _CoffeeMenuPageState createState() => _CoffeeMenuPageState();
