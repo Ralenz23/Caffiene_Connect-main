@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:caffeine_connectfull/cafe_selection.dart';
+import 'package:caffeine_connectfull/cart_page.dart';
 import 'package:caffeine_connectfull/menu_categories/menu_list_coffee.dart';
 
 import 'package:flutter/material.dart';
@@ -350,9 +351,16 @@ class _LandingPageState extends State<LandingPage> {
         unselectedItemColor: const Color(0xff757575),
         type: _bottomNavType,
         onTap: (index) {
-          setState(() {
-            _selectedIndex = index;
-          });
+          if (index == 2) { // Check if the Cart icon is pressed (index 2)
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => CartPage()), // Navigate to CartPage
+            );
+          } else {
+            setState(() {
+              _selectedIndex = index; // Set the selected index for other icons
+            });
+          }
         },
         items: _navBarItems,
       ),
