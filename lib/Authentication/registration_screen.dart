@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:sign_in_button/sign_in_button.dart';
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({super.key});
@@ -140,13 +142,46 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         ),
     );
 
+    //Google auth
+    final FirebaseAuth auth = FirebaseAuth.instance;
+
+    User? user;
+
+    void handleGoogleSignIn(){
+      try {
+        GoogleAuthProvider googleAuthProvider = GoogleAuthProvider();
+        auth.signInWithProvider(googleAuthProvider);
+      } catch (error) {
+        print(error);
+      }
+    }
+
+    @override
+    initState(){
+      super.initState();
+      auth.authStateChanges().listen((event) {
+        setState(() {
+          user = event;
+        });
+      });
+    }
+
+    final googleAuth = SignInButton (
+      Buttons.google,
+      text: "Google Sign In",
+      onPressed: () {
+        handleGoogleSignIn();
+      },
+    );
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        // Replace leading property with back button functionality
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.red),
           onPressed: () {
-            Navigator.of(context).pop(); 
+            Navigator.of(context).pop(); // Navigate back on back arrow press
           },
     ),
   ),
@@ -189,6 +224,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
                     const SizedBox(height: 15),
                     signUpButton,
+
+                    const SizedBox(height: 15),
+                    googleAuth,
 
                   ],  
                 ),
